@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentList } from '../helper-files/content-list';
+/* import { ContentList } from '../helper-files/content-list'; */
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -9,7 +9,7 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentCardComponent implements OnInit  {
 
-  footballPlayer: Content= {
+  /* footballPlayer: Content= {
     id:1,
     title:"Cristiano Ronaldo",
     description:"Portuguese Football player",
@@ -32,23 +32,23 @@ export class ContentCardComponent implements OnInit  {
     creator:"Sravan Reddy Soma",
     imgURL:"https://media.cnn.com/api/v1/images/stellar/prod/220930165943-01-neymar.jpg?c=original",
     type:"Winger"
-  }
+  } */
 
-  myFootballPlayers = new ContentList(this.footballPlayer);
-  contentList = this.myFootballPlayers.getitems();
+ /*  myFootballPlayers = new ContentList(this.footballPlayer); */
+ /*   contentList = this.myFootballPlayers.getitems(); */
 
   constructor(){
-    this.myFootballPlayers.addContent(this.footballPlayer);
+   /*  this.myFootballPlayers.addContent(this.footballPlayer);
     this.myFootballPlayers.addContent(this.footballPlayer2);
-    this.myFootballPlayers.addContent(this.footballPlayer3);
+    this.myFootballPlayers.addContent(this.footballPlayer3); */
   }
   ngOnInit():void{
-    const card = document.getElementById('footballPlayers');
+   /*  const card = document.getElementById('footballPlayers');
     console.log(card);
     if(card){
       card.innerHTML += this.myFootballPlayers.printProperties(0);
       card.innerHTML += this.myFootballPlayers.printProperties(1);
       card.innerHTML += this.myFootballPlayers.printProperties(2);
-    }
-  }
+    } */
+  } 
 }
