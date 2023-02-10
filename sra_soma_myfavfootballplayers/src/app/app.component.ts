@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Content } from './helper-files/content-interface';
+import { Content } from '../app/helper-files/content-interface';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,9 @@ import { Content } from './helper-files/content-interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sra_soma_myfavfootballplayers';
+ // title = 'sra_soma_myfavfootballplayers';
 
-  contentItem:Content = {
+  /* contentItem:Content = {
     id: 1,
       title:"Cristiano Ronaldo",
       description:"Football Player",
@@ -54,16 +54,16 @@ export class AppComponent {
     type:"Winger",
     tags:["Leo", "Argentina"]
   };
- 
+ */ 
 
-  contentArray: Content[];
+  /* contentArray: Content[]; */
   constructor(){
-    this.contentArray = [this.contentItem];
+    /* this.contentArray = [this.contentItem];
    
     this.contentArray.push(this.contentItem2);
     this.contentArray.push(this.contentItem3);
     this.contentArray.push(this.contentItem4);
-    this.contentArray.push(this.contentItem5);
+    this.contentArray.push(this.contentItem5); */
     
   }
 }
