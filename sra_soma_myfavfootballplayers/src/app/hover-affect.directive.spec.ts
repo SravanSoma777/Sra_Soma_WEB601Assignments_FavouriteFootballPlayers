@@ -1,3 +1,4 @@
+import { ElementRef } from '@angular/core';
 import { HoverAffectDirective } from './hover-affect.directive';
 
 describe('HoverAffectDirective', () => {
