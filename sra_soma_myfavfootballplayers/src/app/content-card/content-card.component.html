@@ -1,4 +1,12 @@
-<div class="container">
+<div class="{{ content.type }}">
+  <h2>{{ content.title }}</h2>
+  <p>{{ content.description }}</p>
+  <img class="image" src="{{ content.imgURL }}" (click)="imageText()"/><br>
+  By:<em> {{ content.creator }}</em>
+  <p>{{ content.tags }}</p>
+  <p>Type: {{ content.type }}</p>
+</div>
+<!-- <div class="container">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 mt-5">
@@ -26,3 +34,4 @@
       <h2 class="m-5">Winger</h2>
       <app-content-list class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of contentArray | contentFilter:'Winger'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-list>
     </div>
+ -->

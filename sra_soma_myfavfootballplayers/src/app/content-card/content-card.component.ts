@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output , Input } from '@angular/core';
 /* import { ContentList } from '../helper-files/content-list'; */
 import { Content } from '../helper-files/content-interface';
 
@@ -8,9 +8,38 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit  {
-
+ 
+  @Input() content: Content;
+  constructor() {
+    
+    this.content = {
+      id: 1,
+      title:"Cristiano Ronaldo",
+      description:"Football Player",
+      creator:"Sravan Reddy Soma",
+      imgURL:"https://media.newyorker.com/photos/63826120196c8ef692b4eba5/3:4/w_1277,h_1703,c_limit/Ronaldo_WC22.png",
+      type:"Striker",
+      tags:["Cristiano", "Ronaldo"]
+    },
+    {
+    id:2,
+    title:"Lionel Messi",
+    description:"Argentinian football player",
+    creator:"Sravan Reddy soma",
+    imgURL:"https://img.a.transfermarkt.technology/portrait/big/28003-1671435885.jpg?lm=1",
+    type:"AM",
+    tags:["Leo", "Messi"]
+    }
+    
+}
+ngOnInit(): void {
   
-  filteredString:any = '';
+
+}
+imageText() {
+  console.log("Image Url: " + this.content.imgURL + "Image Title:" + this.content.title);
+}
+  /* filteredString:any = '';
   searchTerm: string = '';
   message: string = '';
   messageColor: string = '';
@@ -95,18 +124,18 @@ export class ContentCardComponent implements OnInit  {
    /*  this.myFootballPlayers.addContent(this.footballPlayer);
     this.myFootballPlayers.addContent(this.footballPlayer2);
     this.myFootballPlayers.addContent(this.footballPlayer3); */
-    this.contentArray = [this.contentItem];
+   /*  this.contentArray = [this.contentItem]; */
     /*  this.contentArray.push(this.contentItem); */
-     this.contentArray.push(this.contentItem2);
+    /*  this.contentArray.push(this.contentItem2);
      this.contentArray.push(this.contentItem3);
      this.contentArray.push(this.contentItem4);
      this.contentArray.push(this.contentItem5);
      this.contentArray.push(this.contentItem6);
      this.contentArray.push(this.contentItem7);
      this.contentArray.push(this.contentItem8);
-  }
+  } */
 
-  search() {
+ /*  search() {
     const content = this.contentArray.find(c => c.title.toLowerCase().substring(0,  this.searchTerm.length) === this.searchTerm.toLowerCase());
     console.log(this.searchTerm);
     if (content) {
@@ -117,9 +146,9 @@ export class ContentCardComponent implements OnInit  {
       this.message = `Content with title "${this.searchTerm.toLowerCase()}" not found.`;
       this.messageColor = 'red';
     }
-  }
+  } */
 
-  ngOnInit():void{
+ /* ngOnInit():void{
    /*  const card = document.getElementById('footballPlayers');
     console.log(card);
     if(card){
@@ -127,5 +156,5 @@ export class ContentCardComponent implements OnInit  {
       card.innerHTML += this.myFootballPlayers.printProperties(1);
       card.innerHTML += this.myFootballPlayers.printProperties(2);
     } */
-  } 
-}
+  }  
+
