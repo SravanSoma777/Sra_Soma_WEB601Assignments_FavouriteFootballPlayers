@@ -1,11 +1,18 @@
 <div class="{{ content.type }}">
   <h2>{{ content.title }}</h2>
   <p>{{ content.description }}</p>
-  <img class="image" src="{{ content.imgURL }}" (click)="imageText()"/><br>
+  <img *ngIf="content.imgURL;else defaultImage" class="image" src="{{ content.imgURL }}" (click)="imageText()"/><br>
   By:<em> {{ content.creator }}</em>
-  <p>{{ content.tags }}</p>
-  <p>Type: {{ content.type }}</p>
+  <p>
+    <span appHoverAffect highlightType="tag" *ngFor="let tag of content.tags"  >
+      #{{ tag }}
+    </span><!-- {{ content.tags }} -->
+  </p>
+  <p appHoverAffect highlightType="type" >Type: {{ content.type }}</p>
 </div>
+<ng-template #defaultImage>
+  <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEClmNeG_UeFb8kSh3TgYRnjCC0qPMNcdaqLHsuOxZDJU4i7XhQqHL7gvmRWlnPhgUMI&usqp=CAU" alt="Default image">
+</ng-template>
 <!-- <div class="container">
     <div class="row">
       <div class="col-md-2"></div>
