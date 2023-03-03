@@ -22,7 +22,7 @@ export class CreatecontentComponent {
   
 }
  */
-@Output() addContentEvent = new EventEmitter<any>();
+@Output() contentCreated = new EventEmitter<any>();
  
   id!:string;
   title!: string;
@@ -41,7 +41,7 @@ export class CreatecontentComponent {
   createContent() {
     return new Promise((success, fail) => {
       if (!this.description || !this.title || !this.creator) {
-        fail('Need the body, title and author to proceed!');
+        fail('The Title,Description and Creator are Required ');
         return;
       }
       const newContent = {
@@ -53,7 +53,7 @@ export class CreatecontentComponent {
         imgUrl: this.imgURL,
         tags: [this.tags]
       };
-      this.addContentEvent.emit(newContent);
+      this.contentCreated.emit(newContent);
       success('Content successfully added Title: ' + newContent.title);
     }).then(successMessage => {
       console.log(successMessage)
