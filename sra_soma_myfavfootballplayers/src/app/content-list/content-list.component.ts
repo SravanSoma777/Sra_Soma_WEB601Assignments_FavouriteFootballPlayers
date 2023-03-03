@@ -1,6 +1,7 @@
 import { style } from '@angular/animations';
 import { Component , Input , OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { CreatecontentComponent } from '../createcontent/createcontent.component';
 
 @Component({
   selector: 'app-content-list',
@@ -87,9 +88,9 @@ export class ContentListComponent implements OnInit {
     tags:["Leo", "Argentina"]
   };
 
-
- contentArray: Content[];
   
+
+  contentArray: Content[];
  constructor(){
    /*  this.myFootballPlayers.addContent(this.footballPlayer);
     this.myFootballPlayers.addContent(this.footballPlayer2);
@@ -119,14 +120,14 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit():void{
-   /*  const card = document.getElementById('footballPlayers');
-    console.log(card);
-    if(card){
-      card.innerHTML += this.myFootballPlayers.printProperties(0);
-      card.innerHTML += this.myFootballPlayers.printProperties(1);
-      card.innerHTML += this.myFootballPlayers.printProperties(2);
-    } */
+
   } 
-  
- 
+
+  addNewContent(newContent:any){
+    this.contentArray.push(newContent);
+    this.contentArray = [...this.contentArray];
+   // console.log(`Content Added Successfully : ${newContent.Title}`)
+    
+   }
+   
 }
