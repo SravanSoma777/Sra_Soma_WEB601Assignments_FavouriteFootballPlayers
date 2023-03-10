@@ -24,10 +24,10 @@ export class PlayerserviceService {
   }
 
 
-  getClickedPlayerCard(idNum:number){
-    const player = CONTENT.filter(obj => obj.id == idNum);
-    this.messageservice.add("Player Card Retrieved at id" + idNum)
-    return of(player)
+  getClickedPlayerCard(playerId:number) {
+    const Clickedplayer = CONTENT.filter(obj => obj.id == playerId);
+    this.messageservice.add("Player Card Retrieved at id" + playerId)
+    return of(Clickedplayer)
   }
 
  

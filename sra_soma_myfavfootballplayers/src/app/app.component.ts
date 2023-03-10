@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PlayerserviceService } from './playerservice.service';
 import { MessageService } from './message.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +9,19 @@ import { MessageService } from './message.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  idNum!: number;
+  playerId!: number;
   
   constructor(private playerservice: PlayerserviceService,private messageservice: MessageService){}
 
-     getClickedPlayer(idNum:number) {
+     getClickedPlayer(playerId:number) {
 
-      if (isNaN(this.idNum)) {
+      if (isNaN(this.playerId)) {
         this.messageservice.add('Please enter a valid number.');
         return;
       }
       
       const contentCardArrayLength = this.playerservice.getcontentCardArrayLength();
-      if (this.idNum < 0 || this.idNum >= contentCardArrayLength) {
+      if (this.playerId < 0 || this.playerId >= contentCardArrayLength) {
         this.messageservice.add('The entered id number is outside the bounds of the ContentCard array.');
         return;
       }
@@ -28,9 +29,9 @@ export class AppComponent {
        
 
        try {
-        const ClickedCard = this.playerservice.getClickedPlayerCard(idNum);
-        this.messageservice.add("Added content of Id" + idNum);
-        return (ClickedCard)
+        const ClickedCard = this.playerservice.getClickedPlayerCard(playerId);
+        this.messageservice.add("Content card Retrieved"+ClickedCard);
+        return;
         
       } catch (error) {
         this.messageservice.add('An error occurred: ');

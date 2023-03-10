@@ -133,6 +133,7 @@ export class ContentListComponent implements OnInit {
 
     this.playerservice.getFootballPlayers().subscribe(content=> this.content = content);
     this.playerservice.getSpecificPlayer(1).subscribe((player: Content[]) => this.player = player);
+    
   } 
 
   addNewContent(newContent:any){
