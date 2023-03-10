@@ -9,6 +9,7 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class PlayerserviceService {
+  getcontentCardArrayLength: any;
   constructor(private messageservice: MessageService) { }
   
   getFootballPlayers(): Observable<Content[]> {
@@ -16,9 +17,16 @@ export class PlayerserviceService {
     this.messageservice.add('content array loaded!');
     return players;
   }
-  getFootballPlayer(id : number): Observable<Content[]>{
+  getSpecificPlayer(id : number): Observable<Content[]>{
     const player = CONTENT.filter(obj=>obj.id == id);
     this.messageservice.add('Content item at :' + id )
+    return of(player)
+  }
+
+
+  getClickedPlayerCard(idNum:number){
+    const player = CONTENT.filter(obj => obj.id == idNum);
+    this.messageservice.add("Player Card Retrieved at id" + idNum)
     return of(player)
   }
 

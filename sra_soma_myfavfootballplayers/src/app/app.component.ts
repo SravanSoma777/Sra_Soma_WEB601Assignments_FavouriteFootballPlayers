@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { PlayerserviceService } from './playerservice.service';
 import { MessageService } from './message.service';
-import { CONTENT } from './helper-files/contentDb';
 
 @Component({
   selector: 'app-root',
@@ -9,30 +8,32 @@ import { CONTENT } from './helper-files/contentDb';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- // id!: number;
-  constructor(){}//private playerservice: PlayerserviceService,
-   // private messageservice: MessageService){}
+  idNum!: number;
+  
+  constructor(private playerservice: PlayerserviceService,private messageservice: MessageService){}
 
-    /* getFootballPlayer() {
+     getClickedPlayer(idNum:number) {
 
-      if (isNaN(this.id)) {
+      if (isNaN(this.idNum)) {
         this.messageservice.add('Please enter a valid number.');
         return;
       }
       
       const contentCardArrayLength = this.playerservice.getcontentCardArrayLength();
-      if (this.id < 0 || this.id >= contentCardArrayLength) {
+      if (this.idNum < 0 || this.idNum >= contentCardArrayLength) {
         this.messageservice.add('The entered id number is outside the bounds of the ContentCard array.');
         return;
       }
 
-      try {
-        const contentCard = this.playerservice.getFootballPlayer(this.id);
-        this.messageservice.add(contentCard);
+       
+
+       try {
+        const ClickedCard = this.playerservice.getClickedPlayerCard(idNum);
+        this.messageservice.add("Added content of Id" + idNum);
+        return (ClickedCard)
+        
       } catch (error) {
-        this.messageservice.add('An error occurred: ' + error.message);
+        this.messageservice.add('An error occurred: ');
       }
-    }
-}
-*/
+    } 
 }

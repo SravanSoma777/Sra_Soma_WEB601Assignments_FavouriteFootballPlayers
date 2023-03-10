@@ -6,6 +6,7 @@
     <p>{{ content.tags }}</p>
     <p>Type: {{ content.type }}</p>
 </div> -->
+
 <div *ngFor="let players of player" class="shadow">
   <app-content-card [content]="players"></app-content-card>
 </div>

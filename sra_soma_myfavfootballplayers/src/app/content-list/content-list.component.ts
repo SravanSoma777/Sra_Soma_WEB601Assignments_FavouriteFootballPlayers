@@ -132,7 +132,7 @@ export class ContentListComponent implements OnInit {
   ngOnInit(){
 
     this.playerservice.getFootballPlayers().subscribe(content=> this.content = content);
-    this.playerservice,getFootballPlayer(2).subscribe((player:Content[]) => this.player = player);
+    this.playerservice.getSpecificPlayer(1).subscribe((player: Content[]) => this.player = player);
   } 
 
   addNewContent(newContent:any){
