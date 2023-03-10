@@ -6,6 +6,9 @@
     <p>{{ content.tags }}</p>
     <p>Type: {{ content.type }}</p>
 </div> -->
+<div *ngFor="let players of player" class="shadow">
+  <app-content-card [content]="players"></app-content-card>
+</div>
 <app-createcontent (contentCreated)="addNewContent($event)"></app-createcontent>
 <div class="container">
     <div class="row">
@@ -23,16 +26,16 @@
   
     <div class="row">
       <h2 class="m-5">Striker</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-success text-white" *ngFor="let item of contentArray | contentFilter:'Striker'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+      <app-content-card class="col-md-4  mt-5 mx-1 card bg-success text-white" *ngFor="let item of content | contentFilter:'Striker'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
     </div>
   
     <div class="row">
       <h2 class="m-5">AM</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-dark text-light" *ngFor="let item of contentArray | contentFilter:'AM'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+      <app-content-card class="col-md-4  mt-5 mx-1 card bg-dark text-light" *ngFor="let item of content | contentFilter:'AM'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
     </div>
 
     <div class="row">
       <h2 class="m-5">Winger</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of contentArray | contentFilter:'Winger'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+      <app-content-card class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of content | contentFilter:'Winger'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
     </div>
 

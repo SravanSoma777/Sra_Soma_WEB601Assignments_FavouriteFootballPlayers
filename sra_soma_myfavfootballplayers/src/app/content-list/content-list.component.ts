@@ -1,7 +1,8 @@
-import { style } from '@angular/animations';
+
 import { Component , Input , OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import { CreatecontentComponent } from '../createcontent/createcontent.component';
+import { PlayerserviceService } from '../playerservice.service';
+
 
 @Component({
   selector: 'app-content-list',
@@ -9,13 +10,18 @@ import { CreatecontentComponent } from '../createcontent/createcontent.component
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-  
+
+  @Input() content:Content[];
+  @Input() player:Content[];
+  @Input('ngModel')title: string;
+  name= "Sravan Reddy Soma";
+
   filteredString:any = '';
   searchTerm: string = '';
   message: string = '';
   messageColor: string = '';
 
-   contentItem:Content = {
+   /* contentItem:Content = {
     id: 1,
       title:"Cristiano Ronaldo",
       description:"Football Player",
@@ -46,18 +52,18 @@ export class ContentListComponent implements OnInit {
     id: 4,
     title:"Cristiano Ronaldo",
     description:"Football Player",
-    creator:"Sravan Reddy Soma",
+    creator:"Sravan Reddy Soma", */
 /*     imgURL:"https://media.newyorker.com/photos/63826120196c8ef692b4eba5/3:4/w_1277,h_1703,c_limit/Ronaldo_WC22.png",
- */    type:"Striker",
+ */ /*    type:"Striker",
     tags:["Cristiano", "Ronaldo"]
   };
   contentItem5:Content = {
     id: 5,
     title:"Lionel Messi",
     description:"Football Player",
-    creator:"Sravan Reddy Soma",
+    creator:"Sravan Reddy Soma", */
 /*     imgURL:"https://img.a.transfermarkt.technology/portrait/big/28003-1671435885.jpg?lm=1",
- */    type:"AM",
+ */  /*   type:"AM",
     tags:["Leo", "Argentina"]
   };
   contentItem6:Content = {
@@ -66,7 +72,7 @@ export class ContentListComponent implements OnInit {
       description:"Football Player",
       creator:"Sravan Reddy Soma",
 /*       imgURL:"https://media.cnn.com/api/v1/images/stellar/prod/220930165943-01-neymar.jpg?c=original",
- */      type:"Winger",
+ */    /*   type:"Winger",
       tags:["Neymar", "Brazil"]
   };
   contentItem7:Content = {
@@ -85,29 +91,33 @@ export class ContentListComponent implements OnInit {
     creator:"Sravan Reddy Soma",
     imgURL:"https://img.a.transfermarkt.technology/portrait/big/28003-1671435885.jpg?lm=1",
     type:"AM",
-    tags:["Leo", "Argentina"]
-  };
+    tags:["Leo", "Argentina"] 
+  }; */
 
   
 
-  contentArray: Content[];
- constructor(){
+  /* contentArray: Content[]; */
+ constructor(private playerservice: PlayerserviceService){
+
+  this.title = '';
+  this.content = [];
+  this.player = [];
    /*  this.myFootballPlayers.addContent(this.footballPlayer);
     this.myFootballPlayers.addContent(this.footballPlayer2);
-    this.myFootballPlayers.addContent(this.footballPlayer3); */
+    this.myFootballPlayers.addContent(this.footballPlayer3); *
     this.contentArray = [this.contentItem];
-    /*  this.contentArray.push(this.contentItem); */
+     this.contentArray.push(this.contentItem); 
      this.contentArray.push(this.contentItem2);
      this.contentArray.push(this.contentItem3);
      this.contentArray.push(this.contentItem4);
      this.contentArray.push(this.contentItem5);
      this.contentArray.push(this.contentItem6);
      this.contentArray.push(this.contentItem7);
-     this.contentArray.push(this.contentItem8);
-  }
+     this.contentArray.push(this.contentItem8);*/
+  } 
 
   search() {
-    const content = this.contentArray.find(c => c.title.toLowerCase().substring(0,  this.searchTerm.length) === this.searchTerm.toLowerCase());
+    const content = this.content.find(c => c.title.toLowerCase().substring(0,  this.searchTerm.length) === this.searchTerm.toLowerCase());
     console.log(this.searchTerm);
     if (content) {
       this.message = `Content with title "${this.searchTerm.toLowerCase()}" found.`;
@@ -119,15 +129,20 @@ export class ContentListComponent implements OnInit {
     }
   }
 
-  ngOnInit():void{
+  ngOnInit(){
 
+    this.playerservice.getFootballPlayers().subscribe(content=> this.content = content);
+    this.playerservice,getFootballPlayer(2).subscribe((player:Content[]) => this.player = player);
   } 
 
   addNewContent(newContent:any){
-    this.contentArray.push(newContent);
-    this.contentArray = [...this.contentArray];
+    this.content.push(newContent);
+    this.content = [...this.content];
    // console.log(`Content Added Successfully : ${newContent.Title}`)
     
    }
+ 
    
 }
+
+

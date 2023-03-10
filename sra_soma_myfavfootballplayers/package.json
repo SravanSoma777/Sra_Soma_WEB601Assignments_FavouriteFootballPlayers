@@ -9,7 +9,8 @@
     "test": "ng test",
     "gencomponent":"npm run-script generatecomponent",
     "genpipe":"npm run-script generatepipe",
-    "gendirective":"npm run-script generatedirective"
+    "gendirective":"npm run-script generatedirective",
+    "genservice":"npm run-script generate service"
   },
   "private": true,
   "dependencies": {
