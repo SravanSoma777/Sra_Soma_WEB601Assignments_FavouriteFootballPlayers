@@ -9,11 +9,11 @@ import { of } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  playerId!: number;
+  //playerId!: number;
   
   constructor(private playerservice: PlayerserviceService,private messageservice: MessageService){}
 
-     getClickedPlayer(playerId:number) {
+   /*   getClickedPlayer(playerId:number) {
 
       if (isNaN(this.playerId)) {
         this.messageservice.add('Please enter a valid number.');
@@ -36,5 +36,5 @@ export class AppComponent {
       } catch (error) {
         this.messageservice.add('An error occurred: ');
       }
-    } 
+    }  */
 }

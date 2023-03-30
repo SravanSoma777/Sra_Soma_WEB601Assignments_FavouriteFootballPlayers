@@ -1,16 +1,16 @@
 {
   "name": "sra-soma-myfavfootballplayers",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "gencomponent":"npm run-script generatecomponent",
-    "genpipe":"npm run-script generatepipe",
-    "gendirective":"npm run-script generatedirective",
-    "genservice":"npm run-script generate service"
+    "gencomponent": "npm run-script generatecomponent",
+    "genpipe": "npm run-script generatepipe",
+    "gendirective": "npm run-script generatedirective",
+    "genservice": "npm run-script generate service"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "angular-in-memory-web-api": "^0.15.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
