@@ -56,8 +56,9 @@ export class ContentListComponent implements OnInit {
    }
 
    addContentToList(newContentItem: Content) : void {
-    this.playerservice.addContent(newContentItem).subscribe(newContentItem =>
-    this.contentList.push(newContentItem));
+    /* this.playerservice.addContent(newContentItem).subscribe(newContentItem =>
+    this.contentList.push(newContentItem)); */
+    this.playerservice.getContent().subscribe(content =>this.contentList = content)
     console.log(`Content added succesfully : ${newContentItem.title}`);
     console.log(newContentItem);
     
