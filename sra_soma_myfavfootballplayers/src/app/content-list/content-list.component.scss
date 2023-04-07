@@ -17,3 +17,67 @@ div.shadow{
     width: 20%;
     background-color: lightblue;
 }
+.contentCard {
+    border: 1px solid #4c4c4c;
+    width: 600px;
+    background: #d4d4d4;
+    color:#4c4c4c;
+    display: inline-block;
+    margin: 2.5%;
+  }
+  
+  .Metal {
+    background: #ceabab;
+    color: #4d3232;
+  }
+  
+  .K-Pop {
+    background: #bbabce;
+    color: #40324d;
+  }
+  
+  .contentTitle {
+    background: #4c4c4c;
+    color: #d4d4d4;
+  }
+  
+  .contentGenre {
+    color: #d4d4d4;
+    background: #4c4c4c;
+  }
+  
+  .Metal > .contentTitle, .Metal > .contentGenre {
+    background: #4d3232;
+    color: #ceabab;
+  }
+  
+  .K-Pop > .contentTitle, .K-Pop > .contentGenre {
+    background: #40324d;
+    color: #bbabce;
+  }
+  
+  .contentCard img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .contentMembers {
+    font-size: small;
+  }
+  
+  .contentTags {
+    font-size: smaller;
+    text-align: right;
+  }
+  
+  .First {
+    border: 2px solid #4c4c4c;
+  }
+  
+  .not-found {
+    color: red;
+  }
+  
+  .found {
+    color: green;
+}
