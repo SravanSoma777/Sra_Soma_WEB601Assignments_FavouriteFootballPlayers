@@ -19,19 +19,19 @@ div.shadow{
 }
 .contentCard {
     border: 1px solid #4c4c4c;
-    width: 600px;
+    width: 500px;
     background: #d4d4d4;
     color:#4c4c4c;
     display: inline-block;
     margin: 2.5%;
   }
   
-  .Metal {
+  .Striker {
     background: #ceabab;
     color: #4d3232;
   }
   
-  .K-Pop {
+  .AM {
     background: #bbabce;
     color: #40324d;
   }
@@ -46,38 +46,46 @@ div.shadow{
     background: #4c4c4c;
   }
   
-  .Metal > .contentTitle, .Metal > .contentGenre {
-    background: #4d3232;
-    color: #ceabab;
+  .Striker > .contentTitle, .Striker > .contentGenre {
+    background: black;
+    color: white;
   }
   
-  .K-Pop > .contentTitle, .K-Pop > .contentGenre {
+  .AM > .contentTitle, .AM > .contentGenre {
     background: #40324d;
     color: #bbabce;
   }
   
   .contentCard img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
   
   .contentMembers {
     font-size: small;
+    font-style: italic;
   }
   
   .contentTags {
     font-size: smaller;
-    text-align: right;
+    text-align: left;
   }
   
   .First {
-    border: 2px solid #4c4c4c;
+    border: 2px solid #5f4242;
   }
   
   .not-found {
-    color: red;
+    color: rgb(104, 15, 15);
   }
   
   .found {
     color: green;
+}
+.Title{
+  font-size:xx-large;
+}
+.Type{
+  font-size: x-large;
+  color: white;
 }

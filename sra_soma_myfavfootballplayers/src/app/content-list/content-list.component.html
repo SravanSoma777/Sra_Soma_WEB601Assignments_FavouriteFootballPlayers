@@ -18,8 +18,8 @@
     <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentList | contentFilter:'Striker'; index as i; first as First" [class.is-first]="First">
       <mat-card-header class="contentTitle">
         <mat-card-title-group>
-          <mat-card-title>{{ item.title }}</mat-card-title>
-          <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
+          <mat-card-title class="Title">{{ item.title }}</mat-card-title>
+          <mat-card-subtitle class="Type" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
           <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt="" >
           <img mat-card-md-image  *ngIf="!item.imgURL" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEClmNeG_UeFb8kSh3TgYRnjCC0qPMNcdaqLHsuOxZDJU4i7XhQqHL7gvmRWlnPhgUMI&usqp=CAU"  alt="" >
         </mat-card-title-group>
@@ -40,8 +40,8 @@
     <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentList | contentFilter: 'AM'; index as i; first as First" [class.is-first]="First">
       <mat-card-header class="contentTitle">
         <mat-card-title-group>
-          <mat-card-title>{{ item.title }}</mat-card-title>
-          <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
+          <mat-card-title class="Title">{{ item.title }}</mat-card-title>
+          <mat-card-subtitle class="Type" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
           <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt=""   >
           <img mat-card-md-image  *ngIf="!item.imgURL" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEClmNeG_UeFb8kSh3TgYRnjCC0qPMNcdaqLHsuOxZDJU4i7XhQqHL7gvmRWlnPhgUMI&usqp=CAU"  alt=""  >
         </mat-card-title-group>
@@ -62,8 +62,8 @@
     <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentList | contentFilter: 'Winger'; index as i; first as First" [class.is-first]="First">
       <mat-card-header class="contentTitle">
         <mat-card-title-group>
-          <mat-card-title>{{ item.title }}</mat-card-title>
-          <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
+          <mat-card-title class="Title">{{ item.title }}</mat-card-title>
+          <mat-card-subtitle class="Type" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
           <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt=""  >
           <img mat-card-md-image  *ngIf="!item.imgURL" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEClmNeG_UeFb8kSh3TgYRnjCC0qPMNcdaqLHsuOxZDJU4i7XhQqHL7gvmRWlnPhgUMI&usqp=CAU"  alt=""  >
         </mat-card-title-group>
