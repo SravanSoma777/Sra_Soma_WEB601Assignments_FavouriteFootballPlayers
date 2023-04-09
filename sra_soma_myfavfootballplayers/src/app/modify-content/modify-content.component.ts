@@ -58,13 +58,11 @@ export class ModifyContentComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // this.bookService.addContent(result).subscribe(() => {
-        //   this.messagesService.add(`Content added: ${result.title}`);
-        //   this.contentAdded.emit(result);
-        // });
-        this.messagesService.add(`Content added: ${result.title}`);
-        this.contentAdded.emit(result);
-        this.playerservice.addContent(result).subscribe();
+         this.playerservice.addContent(result).subscribe(() => {
+           this.messagesService.add(`Content added: ${result.title}`);
+           this.contentAdded.emit(result);
+         });
+        
       }
       dialogRef.componentInstance.contentAdded.subscribe((content: Content) => {
         console.log(`Content added: ${content.title}`);
