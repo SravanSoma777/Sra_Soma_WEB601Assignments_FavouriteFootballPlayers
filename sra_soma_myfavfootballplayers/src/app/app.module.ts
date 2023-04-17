@@ -6,6 +6,8 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { MatButtonModule } from'@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule} from "@angular/material/icon";
+import { MatToolbarModule} from "@angular/material/toolbar"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +27,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSelectModule} from "@angular/material/select";
 import { SpecificContentComponent } from './specific-content/specific-content.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -41,6 +44,7 @@ import { SpecificContentComponent } from './specific-content/specific-content.co
     DialogComponent,
     ContentDialogComponent,
     SpecificContentComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
@@ -59,6 +63,8 @@ import { SpecificContentComponent } from './specific-content/specific-content.co
     MatCardModule,
     MatTabsModule,
     MatSelectModule,
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

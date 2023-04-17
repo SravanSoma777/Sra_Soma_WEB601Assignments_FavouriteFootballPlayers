@@ -11,7 +11,15 @@
 <!-- <div *ngFor="let players of player" class="shadow">
   <app-content-card [content]="players"></app-content-card>
 </div> -->
-<app-modify-content (contentAdded)="addContentToList($event)"></app-modify-content>
+
+<app-modify-content (contentAdded)="addContentToList($event)"></app-modify-content><br><br>
+<div>
+  <mat-form-field> <input matInput [(ngModel)]="searchTerm" placeholder="Enter title"></mat-form-field>
+  <button mat-raised-button color="primary" (click)="search()">Search</button>
+  <div *ngIf="message">
+    <p [ngStyle]="{ color: messageColor }">{{ message }}</p>
+  </div>
+</div>
 <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
   <mat-tab label="Striker">
     <h3>Striker</h3>
@@ -80,39 +88,3 @@
     </mat-card>
   </mat-tab>
 </mat-tab-group>
-
-<!-- <app-createcontent (contentCreated)="addNewContent($event)"></app-createcontent> -->
-<div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8 mt-5">
-        <mat-form-field> <input matInput [(ngModel)]="searchTerm" placeholder="Enter title"></mat-form-field>
-        <button mat-raised-button color="primary" (click)="search()">Search</button>
-        <div *ngIf="message">
-          <p [ngStyle]="{ color: messageColor }">{{ message }}</p>
-        </div>
-  </div> 
-      </div>
-      <div class="col-md-2"></div>
-    </div>
-  
-    <div class="row">
-      <h2 class="m-5">Type: Striker</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-success text-white" *ngFor="let item of contentList | contentFilter:'Striker'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
-    </div>
-  
-    <div class="row">
-      <h2 class="m-5">Type: AM</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-dark text-light" *ngFor="let item of contentList | contentFilter:'AM'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
-    </div>
-
-    <div class="row">
-      <h2 class="m-5">Type: Winger</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of contentList | contentFilter:'Winger'; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
-    </div>
-    <div class="row">
-      <h2 class="m-5">No Type</h2>
-      <app-content-card class="col-md-4  mt-5 mx-1 card bg-primary text-dark" *ngFor="let item of contentList | contentFilter:''; index as i; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
-    </div>
-
-  
