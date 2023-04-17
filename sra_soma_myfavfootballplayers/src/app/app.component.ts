@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PlayerserviceService } from './playerservice.service';
 import { MessageService } from './message.service';
+import { Router } from "@angular/router";
 import { of } from 'rxjs';
 
 @Component({
@@ -11,7 +12,7 @@ import { of } from 'rxjs';
 export class AppComponent {
   //playerId!: number;
   
-  constructor(private playerservice: PlayerserviceService,private messageservice: MessageService){}
+  constructor(private playerservice: PlayerserviceService,private messageservice: MessageService ,private router: Router){}
 
    /*   getClickedPlayer(playerId:number) {
 
@@ -37,4 +38,12 @@ export class AppComponent {
         this.messageservice.add('An error occurred: ');
       }
     }  */
+    ngOnInit() {
+      const id = 8;
+    }
+    navigateToList() {
+      this.router.navigate(['/list']);
+    }
+  
+  
 }

@@ -1,8 +1,8 @@
-
 import { Component , Input , OnInit } from '@angular/core';
 import { ContentFilterPipe } from '../content-filter.pipe';
 import { Content } from '../helper-files/content-interface';
 import { PlayerserviceService } from '../playerservice.service';
+import { ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -21,10 +21,13 @@ export class ContentListComponent implements OnInit {
   messageColor: string = '';
   static highestId: 0;
 
- constructor(private playerservice: PlayerserviceService ){
+ constructor(private playerservice: PlayerserviceService, private route: ActivatedRoute ){
 
   
   this.contentList= [];
+  this.route.params.subscribe(params => {
+    const id = params['id'];
+  })
   } 
 
   search() {

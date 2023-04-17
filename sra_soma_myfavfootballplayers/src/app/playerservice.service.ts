@@ -57,6 +57,10 @@ export class PlayerserviceService {
     );
   }  */
  
+  getContentById(id: string | null): Observable<Content> {
+    const url = `api/content/${id}`;
+    return this.http.get<Content>(url);
+  }
 
   addContent(newContentItem: Content): Observable<Content> {
    // newContentItem.id = ++this.highestId;

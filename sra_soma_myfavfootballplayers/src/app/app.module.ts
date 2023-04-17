@@ -24,6 +24,7 @@ import { CommonModule } from "@angular/common";
 import {MatCardModule} from "@angular/material/card";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatSelectModule} from "@angular/material/select";
+import { SpecificContentComponent } from './specific-content/specific-content.component';
 
 
 
@@ -39,6 +40,7 @@ import {MatSelectModule} from "@angular/material/select";
     ModifyContentComponent,
     DialogComponent,
     ContentDialogComponent,
+    SpecificContentComponent,
     
   ],
   imports: [
