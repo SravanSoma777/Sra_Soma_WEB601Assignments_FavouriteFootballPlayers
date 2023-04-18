@@ -1,11 +1,13 @@
-<button mat-stroked-button color="accent"><a routerLink="/list" routerLinkActive="active">Content List</a></button>
-
-  <mat-card class="card">
+<!DOCTYPE html>
+<br>
+<button mat-stroked-button color="accent"><a routerLink="/list" routerLinkActive="active">Back to Content List</a></button><br>
+<mat-card class="card">
     <div *ngIf="contentItem" class="container" >
       <mat-card-header>
         <mat-card-title><h2>{{ contentItem.title }}</h2></mat-card-title>
       </mat-card-header>
       <mat-card-content>
+        <p>{{ contentItem.description }}</p>
         <img mat-card-md-image  *ngIf="contentItem.imgURL" src="{{ contentItem.imgURL }}" alt="" ><br>
         <img mat-card-md-image  *ngIf="!contentItem.imgURL" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEClmNeG_UeFb8kSh3TgYRnjCC0qPMNcdaqLHsuOxZDJU4i7XhQqHL7gvmRWlnPhgUMI&usqp=CAU"  alt="" ><br>
         By:<em> {{ contentItem.creator }}</em>
@@ -14,3 +16,4 @@
   
     </div>
   </mat-card>
+ 

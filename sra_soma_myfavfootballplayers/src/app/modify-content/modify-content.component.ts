@@ -35,7 +35,6 @@ export class ModifyContentComponent {
     this.playerservice
       .addContent(this.newContentItem)
       .subscribe(newContent  => { 
-       // console.log('addContent() called emit'); 
         this.contentAdded.emit(newContent);
         this.newContentItem = {
           id: null,

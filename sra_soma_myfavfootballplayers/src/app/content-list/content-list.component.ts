@@ -1,9 +1,7 @@
 import { Component , Input , OnInit } from '@angular/core';
-import { ContentFilterPipe } from '../content-filter.pipe';
 import { Content } from '../helper-files/content-interface';
 import { PlayerserviceService } from '../playerservice.service';
 import { ActivatedRoute } from "@angular/router";
-
 
 @Component({
   selector: 'app-content-list',
@@ -44,23 +42,15 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(){
-
-    /* this.playerservice.getFootballPlayers().subscribe(content=> this.content = content);
-    this.playerservice.getSpecificPlayer(1).subscribe((player: Content[]) => this.player = player); */
     this.playerservice.getContent().subscribe(content => this.contentList = content);
-    
   } 
 
   addNewContent(newContent:any){
     this.contentList.push(newContent);
     this.contentList = [...this.contentList];
-   // console.log(`Content Added Successfully : ${newContent.Title}`)
-    
    }
 
    addContentToList(newContentItem: Content) : void {
-    /* this.playerservice.addContent(newContentItem).subscribe(newContentItem =>
-    this.contentList.push(newContentItem)); */
     this.playerservice.getContent().subscribe(content =>this.contentList = content)
     console.log(`Content added succesfully : ${newContentItem.title}`);
     console.log(newContentItem);

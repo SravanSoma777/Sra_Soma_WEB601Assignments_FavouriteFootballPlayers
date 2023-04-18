@@ -5,13 +5,12 @@
       <mat-card-title><h2>{{ content.title }}</h2></mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>{{ content.description }}</p>
       <img *ngIf="content.imgURL;else defaultImage" class="image" src="{{ content.imgURL }}" (click)="imageText()"/><br>
       By:<em> {{ content.creator }}</em>
       <p>
       <span appHoverAffect highlightType="tag" *ngFor="let tag of content.tags"  >
         #{{ tag }}
-      </span><!-- {{ content.tags }} -->
+      </span>
       </p>
       <p appHoverAffect highlightType="type" >Type: {{ content.type }}</p>
     </mat-card-content>
