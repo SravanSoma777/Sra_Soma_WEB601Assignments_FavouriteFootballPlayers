@@ -28,6 +28,9 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatSelectModule } from "@angular/material/select";
 import { SpecificContentComponent } from './specific-content/specific-content.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { LogUpdateService } from './log-update.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -65,9 +68,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatSelectModule,
     MatIconModule,
     MatToolbarModule,
+    ServiceWorkerModule.register('ngsw-worker.js'),
+    MatSnackBarModule
     
   ],
-  providers: [],
+  providers: [LogUpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
