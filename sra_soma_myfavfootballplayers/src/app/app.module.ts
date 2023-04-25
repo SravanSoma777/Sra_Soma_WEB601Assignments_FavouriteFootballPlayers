@@ -23,9 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
 import { ContentDialogComponent } from './content-dialog/content-dialog.component';
 import { CommonModule } from "@angular/common";
-import {MatCardModule} from "@angular/material/card";
-import {MatTabsModule} from "@angular/material/tabs";
-import {MatSelectModule} from "@angular/material/select";
+import { MatCardModule } from "@angular/material/card";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatSelectModule } from "@angular/material/select";
 import { SpecificContentComponent } from './specific-content/specific-content.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -64,7 +64,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatTabsModule,
     MatSelectModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
