@@ -7,22 +7,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class LogUpdateService {
+  checkForUpdates() {
+    throw new Error('Method not implemented.');
+  }
 
-  constructor(private updates: SwUpdate, private snackBar: MatSnackBar, private updateService: LogUpdateService) {}
-    public init(){
-      this.updates.versionUpdates.subscribe(event => {
-      switch (event.type) {
-      case 'VERSION_DETECTED':
-      console.log(`Downloading new app version:
-      ${event.version.hash}`);
-      break;
-      case 'VERSION_READY':
-      console.log(`Current app version:
-      ${event.currentVersion.hash}`);
-      console.log(`New app version ready for use:
-      ${event.latestVersion.hash}`);
-      break;
-      } });
-      }
+  constructor(private swUpdate: SwUpdate, private snackBar: MatSnackBar) {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.versionUpdates.subscribe(() => {
+        const snackBarRef = this.snackBar.open('New version available', 'Update');
+        snackBarRef.onAction().subscribe(() => {
+          this.swUpdate.activateUpdate().then(() => document.location.reload());
+        });
+      });
+    }
+  }   
 }
 

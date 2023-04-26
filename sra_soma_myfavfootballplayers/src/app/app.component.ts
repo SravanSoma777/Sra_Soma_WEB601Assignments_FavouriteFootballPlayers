@@ -1,9 +1,10 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit, inject} from '@angular/core';
 import { PlayerserviceService } from './playerservice.service';
 import { MessageService } from './message.service';
 import { Router } from "@angular/router";
 import { of } from 'rxjs';
 import { LogUpdateService } from './log-update.service';
+import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-root',
@@ -12,16 +13,19 @@ import { LogUpdateService } from './log-update.service';
 })
 export class AppComponent implements OnInit{
   //playerId!: number;
-  
-  constructor(private playerservice: PlayerserviceService,private messageservice: MessageService ,private router: Router, private logService: LogUpdateService){}
+  snackBarRef = inject(MatSnackBarRef);
+  constructor(private playerservice: PlayerserviceService,private messageservice: MessageService ,private router: Router, private logService: LogUpdateService,private _snackBar: MatSnackBar){}
 
     ngOnInit():void {
       const id = 8;
-      this.logService.init();
+      //this.logService.init();
     }
     navigateToList() {
       this.router.navigate(['/list']);
     }
+    openSnackBar() {
+      this.logService.checkForUpdates();
+    }
+    
+    }
   
-  
-}
